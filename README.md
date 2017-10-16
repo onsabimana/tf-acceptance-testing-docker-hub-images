@@ -12,51 +12,48 @@ Automatic build of terraform acceptance test container for Docker Hub
 
 First, edit the Gopkg.toml file to your liking (RTFM)[https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md]
 
-Shell into the docker container
-
-### Option A: build it yourself and update (slow)
+Download the cache from s3
 ```
-docker build -t acceptance .
-docker run --rm -it \
-  --entrypoint /bin/bash \
-  -v $(pwd):/go/src/arrakis/host \
-  acceptance
+export AWS_PROFILE=development
+aws s3 sync s3://cozero-arrakis-acceptance-test-vendor-cache/ vendor/
 ```
 
-### Option B: use the dockerhub container
+Update the Gopkg.lock
 ```
 docker run --rm -it \
   --entrypoint /bin/bash \
-  -v $(pwd):/go/src/arrakis/host \
-  cozero/tf-acceptance-testing
+  -v ($pwd):/go/src/arrakis \
+  cozero/tf-acceptance-testing dep ensure -v
 ```
 
-Then, update the Gopkg.lock file in this repo via one of the following options:-
-
+Sync the cache back to s3
 ```
-cp host/Gopkg.toml ./
-cp host/hello.go ./
-dep ensure -v
-cp Gopkg.lock host/
+aws s3 sync vendor/ s3://cozero-arrakis-acceptance-test-vendor-cache/
 ```
 
 Finally, commit the changes to Gopkg.lock and Gopkg.toml and PR!
 
 ## Usage
 
-I'm currently building a second dockerfile
+If this container has everything you need for your tests, you're good to just
 
+```
+docker run --rm \
+  -e TF_ACC=1 \
+  -v $(pwd)/tests:/go/src/arrakis/tests \
+  cozero/tf-acceptance-testing test -v ./...
+```
+
+Otherwise, you'll need to build another container with an updated vendor cache and run it
 ```
 FROM cozero/tf-acceptance-testing
 LABEL authors="Mat Baker <mbaker@cozero.com.au>,Stuart Auld <sauld@cozero.com.au>"
 
 COPY tests $GOPATH/src/arrakis
 
-RUN dep ensure
+RUN dep ensure -v
 
 ENTRYPOINT ["go"]
 
 CMD ["test", "-v"]
 ```
-
-Note: this dockerfile will only work for packages named "arrakis"
