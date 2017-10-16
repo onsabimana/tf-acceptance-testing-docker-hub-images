@@ -20,20 +20,34 @@
 #  name = "github.com/x/y"
 #  version = "2.4.0"
 
+required = ["github.com/hashicorp/terraform/helper/schema",
+            "github.com/hashicorp/terraform/helper/resource",
+            "github.com/hashicorp/terraform/terraform",
+            "github.com/terraform-providers/terraform-provider-aws/aws",
+            "github.com/terraform-providers/terraform-provider-template/template",
+            "github.com/terraform-providers/terraform-provider-tls/tls",
+            "github.com/aws/aws-sdk-go/aws",
+            "github.com/aws/aws-sdk-go/aws/awserr",
+            "github.com/aws/aws-sdk-go/service/iam"]
+[metadata]
+project = "arrakis"
+updated = "2017-10-16"
 
 [[constraint]]
   name = "github.com/aws/aws-sdk-go"
   version = "1.12.10"
 
 [[constraint]]
-  name = "github.com/cozero/terraform-provider-aws"
-  version = "0.1.4"
+  name = "github.com/terraform-providers/terraform-provider-aws"
+  version = "1.0.0"
+  # eventually the cozero fork should die. when
+	# https://github.com/terraform-providers/terraform-provider-aws/pull/1463
+	# gets merged remove this source
+  source = "github.com/cozero/terraform-provider-aws"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  # currently this is the only known working commitish
-  # this terraform commit breaks 4acdc53a5646aef7fd1f5044ffb6c1380687344b acceptance testing
-  revision = "d969f97e730d527a568a0929ce52df70e062bca0"
+  version = "0.10.7"
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-template"
