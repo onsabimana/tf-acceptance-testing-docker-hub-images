@@ -39,9 +39,9 @@ updated = "2017-10-16"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  # currently this is the only known working commitish
+  # currently this is the last known working version
   # this terraform commit breaks 4acdc53a5646aef7fd1f5044ffb6c1380687344b acceptance testing
-  revision = "d969f97e730d527a568a0929ce52df70e062bca0"
+  version = "0.10.0"
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
