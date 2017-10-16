@@ -39,13 +39,15 @@ updated = "2017-10-16"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  # currently this is the last known working version
-  # this terraform commit breaks 4acdc53a5646aef7fd1f5044ffb6c1380687344b acceptance testing
+  # currently this is the last known working version. this terraform commit
+  # 4acdc53a5646aef7fd1f5044ffb6c1380687344b makes id fields illegal, breaking
+  # acceptance testing. it will be fixed when terraform-provider-aws removes id
+  # fields from their resources
   version = "0.10.0"
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
-  version = "1.0.0"
+  version = "1.1.0"
   # eventually the cozero fork should die. when
 	# https://github.com/terraform-providers/terraform-provider-aws/pull/1463
 	# gets merged remove this source
