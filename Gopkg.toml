@@ -38,16 +38,18 @@ updated = "2017-10-16"
   version = "1.12.10"
 
 [[constraint]]
+  name = "github.com/hashicorp/terraform"
+  # currently this is the only known working commitish
+  # this terraform commit breaks 4acdc53a5646aef7fd1f5044ffb6c1380687344b acceptance testing
+  revision = "d969f97e730d527a568a0929ce52df70e062bca0"
+
+[[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   version = "1.0.0"
   # eventually the cozero fork should die. when
 	# https://github.com/terraform-providers/terraform-provider-aws/pull/1463
 	# gets merged remove this source
   source = "github.com/cozero/terraform-provider-aws"
-
-[[constraint]]
-  name = "github.com/hashicorp/terraform"
-  version = "0.10.7"
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-template"
