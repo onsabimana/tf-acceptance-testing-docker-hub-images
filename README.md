@@ -10,7 +10,17 @@ Automatic build of terraform acceptance test container for Docker Hub
 
 ## Updating dependencies
 
-?
+1. Add your test files to the tests subdir.
+2. Rebuild the vendor.json (TAKES FOREVER)
+```
+docker build -t acceptance -f Dockerfile-bootstrap .
+```
+3. Extract the vendor.json from the image
+```
+docker run --rm acceptance > vendor.json
+```
+4. Commit the vendor.json and issue a PR
+
 
 ## Usage
 

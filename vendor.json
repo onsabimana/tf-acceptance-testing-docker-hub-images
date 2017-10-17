@@ -549,6 +549,12 @@
 			"revisionTime": "2017-07-27T06:48:18Z"
 		},
 		{
+			"checksumSHA1": "5AzUq05YR5wCsrtSwfcjVL+WhUQ=",
+			"path": "github.com/cozero/terraform-provider-aws/aws",
+			"revision": "b44f290975df11f25af2b2db0e71d63fabf32c39",
+			"revisionTime": "2017-08-21T23:07:34Z"
+		},
+		{
 			"checksumSHA1": "mrz/kicZiUaHxkyfvC/DyQcr8Do=",
 			"path": "github.com/davecgh/go-spew/spew",
 			"revision": "ecdeabc65495df2dec95d7c4a4c3e021903035e5",
@@ -739,8 +745,16 @@
 		{
 			"checksumSHA1": "kfHRZlHbpe2gQoRV3IA92RGOUrA=",
 			"path": "github.com/hashicorp/terraform/config/configschema",
-			"revision": "0388bc1b232773946646c25fbd76fc1c140c40d1",
-			"revisionTime": "2017-10-16T17:32:38Z",
+			"revision": "71e989ba3edb40e339adaf72e9499060c5216b16",
+			"revisionTime": "2017-10-14T01:50:10Z",
+			"version": "v0.10.0",
+			"versionExact": "v0.10.0"
+		},
+		{
+			"checksumSHA1": "aL8DmN6dpu+WMaznNkSa3YTm2+0=",
+			"path": "github.com/hashicorp/terraform/config/hcl2shim",
+			"revision": "71e989ba3edb40e339adaf72e9499060c5216b16",
+			"revisionTime": "2017-10-14T01:50:10Z",
 			"version": "v0.10.0",
 			"versionExact": "v0.10.0"
 		},

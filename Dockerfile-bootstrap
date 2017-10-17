@@ -12,8 +12,12 @@ ENV TERRAFORM_VERSION v0.10.0
 
 WORKDIR $GOPATH/src/arrakis
 
-COPY vendor.json $GOPATH/src/arrakis/vendor/vendor.json
+COPY tests $GOPATH/src/arrakis/tests
 
-RUN govendor sync
+RUN \
+     govendor init \
+  && govendor fetch -v +external \
+  && govendor fetch -v +missing \
+  && govendor fetch -v github.com/hashicorp/terraform/...@$TERRAFORM_VERSION
 
-ENTRYPOINT ["go"]
+CMD ["cat", "vendor/vendor.json"]
