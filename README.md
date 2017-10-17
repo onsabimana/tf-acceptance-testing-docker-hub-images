@@ -5,33 +5,12 @@ Automatic build of terraform acceptance test container for Docker Hub
 
 * Debian jessie
 * Go 1.9.1
-* Go dep 0.3.1 (Google's sub-official dependancy management tool)
-* Go dependencies based on the Gopkg.lock file
+* Govendor 1.0.8
+* Go dependencies based on vendor.json file
 
 ## Updating dependencies
 
-First, edit the Gopkg.toml file to your liking (RTFM)[https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md]
-
-Download the cache from s3
-```
-export AWS_PROFILE=development
-aws s3 sync s3://cozero-arrakis-acceptance-test-vendor-cache/ vendor/
-```
-
-Update the Gopkg.lock
-```
-docker run --rm -it \
-  --entrypoint /bin/bash \
-  -v ($pwd):/go/src/arrakis \
-  cozero/tf-acceptance-testing dep ensure -v
-```
-
-Sync the cache back to s3
-```
-aws s3 sync vendor/ s3://cozero-arrakis-acceptance-test-vendor-cache/
-```
-
-Finally, commit the changes to Gopkg.lock and Gopkg.toml and PR!
+?
 
 ## Usage
 
@@ -39,8 +18,12 @@ If this container has everything you need for your tests, you're good to just
 
 ```
 docker run --rm \
+  -e BUILDKITE_COMMIT=$BUILDKITE_COMMIT \
+  -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
   -e TF_ACC=1 \
   -v $(pwd)/tests:/go/src/arrakis/tests \
+  -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+  -v /var/lib/buildkite-agent/.ssh/known_hosts:/root/.ssh/known_hosts:ro \
   cozero/tf-acceptance-testing test -v ./...
 ```
 
@@ -51,7 +34,8 @@ LABEL authors="Mat Baker <mbaker@cozero.com.au>,Stuart Auld <sauld@cozero.com.au
 
 COPY tests $GOPATH/src/arrakis
 
-RUN dep ensure -v
+RUN \
+     govendor fetch -v +missing
 
 ENTRYPOINT ["go"]
 
