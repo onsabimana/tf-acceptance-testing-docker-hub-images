@@ -8,9 +8,10 @@ Automatic build of terraform acceptance test container for Docker Hub
 * Go dep 0.3.1 (Google's sub-official dependancy management tool)
 * Go dependencies based on the Gopkg.lock file
 
-## Updating dependencies
+## Updating dependency versions
 
 First, edit the Gopkg.toml file to your liking (RTFM)[https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md]
+AND/OR add your go code with new imports to the tests folder
 
 Download the cache from s3
 ```
@@ -21,7 +22,7 @@ aws s3 sync s3://cozero-arrakis-acceptance-test-vendor-cache/ vendor/
 Update the Gopkg.lock
 ```
 docker run --rm -it \
-  --entrypoint /bin/bash \
+  --entrypoint '' \
   -v ($pwd):/go/src/arrakis \
   cozero/tf-acceptance-testing dep ensure -v
 ```
