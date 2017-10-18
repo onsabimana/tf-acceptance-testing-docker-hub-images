@@ -8,10 +8,10 @@ RUN \
   && cd $GOPATH/src/github.com/golang/dep \
   && git checkout $GOLANG_DEP_VERSION
 
-COPY Gopkg.lock Gopkg.toml $GOPATH/src/arrakis/
+COPY tests $GOPATH/src/arrakis/
 
 WORKDIR $GOPATH/src/arrakis
 
-RUN dep ensure -v -vendor-only
+RUN dep ensure -v
 
 ENTRYPOINT ["go"]
