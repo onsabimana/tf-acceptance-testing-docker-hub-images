@@ -23,7 +23,7 @@ Update the Gopkg.lock
 ```
 docker run --rm -it \
   --entrypoint '' \
-  -v ($pwd):/go/src/arrakis \
+  -v $(pwd):/go/src/arrakis \
   cozero/tf-acceptance-testing dep ensure -v
 ```
 
