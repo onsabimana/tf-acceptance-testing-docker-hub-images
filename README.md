@@ -11,15 +11,16 @@ Automatic build of terraform acceptance test container for Docker Hub
 ## Updating dependencies
 
 1. Add your test files to the tests subdir.
-2. Rebuild the vendor.json (TAKES FOREVER)
+2. Add any version locks to the Dockerfile-bootstrap
+3. Rebuild the vendor.json (TAKES FOREVER)
 ```
 docker build -t acceptance -f Dockerfile-bootstrap .
 ```
-3. Extract the vendor.json from the image
+4. Extract the vendor.json from the image
 ```
 docker run --rm acceptance > vendor.json
 ```
-4. Commit the vendor.json and issue a PR
+5. Commit the vendor.json and issue a PR
 
 
 ## Usage
@@ -44,8 +45,11 @@ LABEL authors="Mat Baker <mbaker@cozero.com.au>,Stuart Auld <sauld@cozero.com.au
 
 COPY tests $GOPATH/src/arrakis
 
+ENV TERRAFORM_VERSION 1.0
+
 RUN \
-     govendor fetch -v +missing
+     govendor fetch -v +missing \
+     govendor fetch -v github.com/hashicorp/terraform/...@$TERRAFORM_VERSION
 
 ENTRYPOINT ["go"]
 

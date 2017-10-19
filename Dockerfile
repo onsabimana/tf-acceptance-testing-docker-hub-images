@@ -8,7 +8,7 @@ RUN \
   && cd $GOPATH/src/github.com/kardianos/govendor \
   && git checkout $GOVENDOR_VERSION
 
-ENV TERRAFORM_VERSION v0.10.0
+ENV TERRAFORM_VERSION 268138dbd49368dafe0af174bf1b8fe9c1812e53
 
 WORKDIR $GOPATH/src/arrakis
 
