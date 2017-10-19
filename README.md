@@ -1,5 +1,5 @@
-# terraform-acceptance-testing-docker-hub-images
-Automatic build of terraform acceptance test container for Docker Hub
+# Terraform Acceptance Test Docker Image
+Automatic build of terraform acceptance test container for (Docker Hub)[https://hub.docker.com/r/cozero/tf-acceptance-testing/]
 
 ## What's included?
 
