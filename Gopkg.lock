@@ -171,9 +171,9 @@
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
-  revision = "40cb6e9af58b325efe73da37189be3a0222f71fb"
+  revision = "30cbd6a3f03edd61a2537b96a76ef57e36d7bd19"
   source = "github.com/cozero/terraform-provider-aws"
-  version = "v1.1.0"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-template"
@@ -214,6 +214,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "327ad3bb9793e6290a28d21226d13f663159970cbdacfd662c22d21b751c0573"
+  inputs-digest = "2ef148257c8c72e6f6929d6caa7fea0bbf88114bbd22dd81091381e30d7cfbc0"
   solver-name = "gps-cdcl"
   solver-version = 1
