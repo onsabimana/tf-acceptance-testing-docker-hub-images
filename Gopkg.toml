@@ -39,25 +39,20 @@ updated = "2017-10-16"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  # currently this is the last known working version. this terraform commit
-  # 4acdc53a5646aef7fd1f5044ffb6c1380687344b makes id fields illegal, breaking
-  # acceptance testing. it will be fixed when terraform-provider-aws removes id
-  # fields from their resources
-  version = "=0.10.0"
-
-
+  revision = "268138dbd49368dafe0af174bf1b8fe9c1812e53"
+  # currently this is the last known working commitish. it adds the GetOkExists
+  # function to helper/schema/resource_data.go which is used in the aws provider
+  # this terraform commit 4acdc53a5646aef7fd1f5044ffb6c1380687344b makes id
+  # fields illegal, breaking acceptance testing. it will be fixed when
+  # terraform-provider-aws removes id fields from their resources.
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
-  # version 1.1.0 needs a feature from terraform 0.10.7
-  version = "=1.0.0"
+  version = "1.1.0"
   # eventually the cozero fork should die. when
 	# https://github.com/terraform-providers/terraform-provider-aws/pull/1463
 	# gets merged remove this source
   source = "github.com/cozero/terraform-provider-aws"
-
-
-
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-template"

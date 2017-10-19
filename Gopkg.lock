@@ -100,8 +100,7 @@
 [[projects]]
   name = "github.com/hashicorp/terraform"
   packages = ["config","config/module","dag","flatmap","helper/config","helper/encryption","helper/experiment","helper/hashcode","helper/hilmapstructure","helper/logging","helper/mutexkv","helper/pathorcontents","helper/resource","helper/schema","helper/shadow","helper/structure","helper/validation","moduledeps","plugin/discovery","terraform"]
-  revision = "2041053ee9444fa8175a298093b55a89586a1823"
-  version = "v0.10.0"
+  revision = "268138dbd49368dafe0af174bf1b8fe9c1812e53"
 
 [[projects]]
   name = "github.com/hashicorp/vault"
@@ -171,9 +170,9 @@
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
-  revision = "30cbd6a3f03edd61a2537b96a76ef57e36d7bd19"
+  revision = "40cb6e9af58b325efe73da37189be3a0222f71fb"
   source = "github.com/cozero/terraform-provider-aws"
-  version = "v1.0.0"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-template"
@@ -214,6 +213,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2ef148257c8c72e6f6929d6caa7fea0bbf88114bbd22dd81091381e30d7cfbc0"
+  inputs-digest = "72e48bb58f764a917796a286b47f0bb46cfca97e8981f57d9f47d3bb323f613c"
   solver-name = "gps-cdcl"
   solver-version = 1
