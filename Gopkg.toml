@@ -20,7 +20,8 @@
 #  name = "github.com/x/y"
 #  version = "2.4.0"
 
-required = ["github.com/hashicorp/terraform/helper/schema",
+required = ["github.com/hashicorp/terraform/helper/acctest",
+            "github.com/hashicorp/terraform/helper/schema",
             "github.com/hashicorp/terraform/helper/resource",
             "github.com/hashicorp/terraform/terraform",
             "github.com/terraform-providers/terraform-provider-aws/aws",
@@ -28,7 +29,8 @@ required = ["github.com/hashicorp/terraform/helper/schema",
             "github.com/terraform-providers/terraform-provider-tls/tls",
             "github.com/aws/aws-sdk-go/aws",
             "github.com/aws/aws-sdk-go/aws/awserr",
-            "github.com/aws/aws-sdk-go/service/iam"]
+            "github.com/aws/aws-sdk-go/service/iam",
+            "github.com/aws/aws-sdk-go/service/route53"]
 [metadata]
 project = "arrakis"
 updated = "2017-10-16"
@@ -39,12 +41,11 @@ updated = "2017-10-16"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  revision = "268138dbd49368dafe0af174bf1b8fe9c1812e53"
-  # currently this is the last known working commitish. it adds the GetOkExists
-  # function to helper/schema/resource_data.go which is used in the aws provider
-  # this terraform commit 4acdc53a5646aef7fd1f5044ffb6c1380687344b makes id
-  # fields illegal, breaking acceptance testing. it will be fixed when
+  version = "=0.10.7-acceptance-testing"
+  # this hashicorp terraform commit 4acdc53a5646aef7fd1f5044ffb6c1380687344b
+  # makes id fields illegal, breaking acceptance testing. it will be fixed when
   # terraform-provider-aws removes id fields from their resources.
+  source = "github.com/cozero/terraform"
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
