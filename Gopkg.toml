@@ -1,42 +1,11 @@
-
-# Gopkg.toml example
-#
-# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
-# for detailed Gopkg.toml documentation.
-#
-# required = ["github.com/user/thing/cmd/thing"]
-# ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
-#
-# [[constraint]]
-#   name = "github.com/user/project"
-#   version = "1.0.0"
-#
-# [[constraint]]
-#   name = "github.com/user/project2"
-#   branch = "dev"
-#   source = "github.com/myfork/project2"
-#
-# [[override]]
-#  name = "github.com/x/y"
-#  version = "2.4.0"
-
-
-[[constraint]]
-  name = "github.com/aws/aws-sdk-go"
-  version = "1.12.10"
-
-[[constraint]]
-  name = "github.com/cozero/terraform-provider-aws"
-  version = "0.1.4"
+[metadata]
+project = "arrakis-acceptance-testing"
+updated = "2017-10-22"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  version = "0.10.7"
-
-[[constraint]]
-  name = "github.com/terraform-providers/terraform-provider-template"
-  version = "1.0.0"
-
-[[constraint]]
-  name = "github.com/terraform-providers/terraform-provider-tls"
-  version = "1.0.0"
+  version = "=0.10.7-acceptance-testing"
+  # this hashicorp terraform commit 4acdc53a5646aef7fd1f5044ffb6c1380687344b
+  # makes id fields illegal, breaking acceptance testing. it will be fixed when
+  # terraform-provider-aws removes id fields from their resources.
+  source = "github.com/cozero/terraform"
