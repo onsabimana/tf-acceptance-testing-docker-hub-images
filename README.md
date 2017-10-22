@@ -21,10 +21,12 @@ So, since we're basically dropping our tests in the middle of someone else's rep
 
 ## Usage
 
-If this container has everything you need for your tests, you're good to just
+Modify the docker command below, noting in particular:
+* AWS_PROFILE should be setup in your ~/.aws/credentials file and should be a test/dev account
+* BUILDKITE_BRANCH will be the branch of your module's repo that you want to test against
+* You can select a specific version of the acceptance tests to test against using the docker tag
 
 ```
-docker tag cozero/tf-acceptance-testing:latest gogo
 docker run --rm \
   -e AWS_PROFILE=development \
   -e BUILDKITE_BRANCH=dev-buildskip \
@@ -33,7 +35,7 @@ docker run --rm \
   -v ~/.aws:/root/.aws \
   -v ~/.ssh:/root/.ssh \
   $(for i in $(ls aws); do echo "--mount type=bind,source=$(pwd)/aws/${i},target=/go/src/github.com/terraform-providers/terraform-provider-aws/aws/${i}"; done) \
-  gogo test -v -run Arrakis ./...
+  cozero/tf-acceptance-testing:latest test -v -run Arrakis ./...
 
 
 ```
