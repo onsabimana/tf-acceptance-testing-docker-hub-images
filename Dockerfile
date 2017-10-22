@@ -15,7 +15,7 @@ RUN \
 
 WORKDIR $GOPATH/src/github.com/terraform-providers/terraform-provider-aws
 
-ENV TF_PROVIDER_AWS_VERSION v1.1.0
+ENV TF_PROVIDER_AWS_VERSION master
 RUN git checkout $TF_PROVIDER_AWS_VERSION
 
 COPY Gopkg.toml Gopkg.lock ./

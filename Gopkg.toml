@@ -4,8 +4,4 @@ updated = "2017-10-22"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  version = "=0.10.7-acceptance-testing"
-  # this hashicorp terraform commit 4acdc53a5646aef7fd1f5044ffb6c1380687344b
-  # makes id fields illegal, breaking acceptance testing. it will be fixed when
-  # terraform-provider-aws removes id fields from their resources.
-  source = "github.com/cozero/terraform"
+  branch = "master"
