@@ -46,7 +46,7 @@ docker build -t acctest .
 
 Extract the new Gopkg.lock
 ```
-Gopkg.lock < $(docker run --rm acctest echo Gopkg.lock)
+docker run --rm --entrypoint '' -v $(pwd):/host acctest cp Gopkg.lock /host/Gopkg.lock
 ```
 
 Finally, commit the changes to Gopkg.lock and Gopkg.toml and PR!
