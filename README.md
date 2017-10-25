@@ -9,7 +9,7 @@ So, since we're basically dropping our tests in the middle of someone else's rep
 
 - tests must be in the aws package
 - namespace pretty much everything with Arrakis to avoid conflicts. E.g. instead of testAccProviders, I used testAccArrakisProviders
-- use Docker 17.06 or greater to enable single container mount support
+- mount your modules to (e.g.) /config and refer there in the test config
 
 ## What's included?
 
@@ -23,22 +23,18 @@ So, since we're basically dropping our tests in the middle of someone else's rep
 
 Modify the docker command below, noting in particular:
 * AWS_PROFILE should be setup in your ~/.aws/credentials file and should be a test/dev account
-* BUILDKITE_BRANCH will be the branch of your module's repo that you want to test against
 * You can select a specific version of the acceptance tests to test against using the docker tag
-
 ```
 docker run --rm \
+  -e ARRAKIS_SOURCE_DIRECTORY=/config \
   -e AWS_PROFILE=development \
-  -e BUILDKITE_BRANCH=dev-buildskip \
-  -e SSH_AUTH_SOCKET=$SSH_AUTH_SOCKET \
   -e TF_ACC=1 \
   -v ~/.aws:/root/.aws \
-  -v ~/.ssh:/root/.ssh \
+  -v $(pwd):/config \
   $(for i in $(ls aws); do echo "--mount type=bind,source=$(pwd)/aws/${i},target=/go/src/github.com/terraform-providers/terraform-provider-aws/aws/${i}"; done) \
-  cozero/tf-acceptance-testing:latest test -v -run Arrakis ./...
-
-
+  cozero/tf-acceptance-testing:v0.10.8 test -v -run Arrakis ./aws/
 ```
+
 ## Updating dependency versions
 
 Add any new constraints to the Gopkg.toml file to your liking (RTFM)[https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md]
