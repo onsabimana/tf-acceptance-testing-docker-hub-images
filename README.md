@@ -14,9 +14,9 @@ So, since we're basically dropping our tests in the middle of someone else's rep
 ## What's included?
 
 * Debian jessie
-* Go 1.9.1
-* Go dep 0.3.1 (Google's sub-official dependancy management tool)
-* terraform-provider-aws v1.1.0
+* Go 1.9.2
+* Go dep 0.3.2 (Google's sub-official dependancy management tool)
+* terraform-provider-aws v1.3.0
 * Go dependencies based on the Gopkg.lock file and the terraform-provier-aws/vendor folder
 
 ## Usage
@@ -35,18 +35,26 @@ docker run --rm \
   cozero/tf-acceptance-testing:v0.10.8 test -v -run Arrakis ./aws/
 ```
 
+* or use aws-vault, run in server mode and remove the AWS stuff
+```
+docker run --rm \
+  -e ARRAKIS_SOURCE_DIRECTORY=/config \
+  -e TF_ACC=1 \
+  -v $(pwd):/config \
+  $(for i in $(ls tests); do echo "--mount type=bind,source=$(pwd)/tests/${i},target=/go/src/github.com/terraform-providers/terraform-provider-aws/aws/${i}"; done) \
+```
 ## Updating dependency versions
 
+Build the bootstrap container
+```
+docker build -f Dockerfile-bootstrap -t acctest .
+```
+
+Get the new Gopkg .lock file
+```
+(docker run --rm acctest) > Gopkg.lock
+```
+
 Add any new constraints to the Gopkg.toml file to your liking (RTFM)[https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md]
-
-Build the Gopkg.lock
-```
-docker build -t acctest .
-```
-
-Extract the new Gopkg.lock
-```
-docker run --rm --entrypoint '' -v $(pwd):/host acctest cp Gopkg.lock /host/Gopkg.lock
-```
 
 Finally, commit the changes to Gopkg.lock and Gopkg.toml and PR!
