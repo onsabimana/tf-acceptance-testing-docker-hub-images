@@ -2,18 +2,16 @@ FROM golang:1.9.2
 LABEL authors="Mat Baker <mbaker@cozero.com.au,Stuart Auld <sauld@cozero.com.au>"
 
 # Use dep to convert vendor.json to Gopkg.lock and then update with our Gopkg.toml
-ENV GOLANG_DEP_FORK kyleconroy
-ENV GOLANG_DEP_VERSION govendor-importer
+# Warning: using master until v0.3.3 is released!
+ENV GOLANG_DEP_VERSION master
 
 RUN \
      go get -u github.com/golang/dep/cmd/dep \
   && cd $GOPATH/src/github.com/golang/dep \
-  && git remote add fork https://github.com/$GOLANG_DEP_FORK/dep \
-  && git fetch fork \
-  && git checkout fork/$GOLANG_DEP_VERSION
+  && git checkout $GOLANG_DEP_VERSION
 
 # We're going to impregnate our tests in the terraform-provider-aws package
-ENV TF_PROVIDER_AWS_VERSION v1.3.0
+ENV TF_PROVIDER_AWS_VERSION v1.5.0
 
 RUN \
      go get -u github.com/terraform-providers/terraform-provider-aws/aws

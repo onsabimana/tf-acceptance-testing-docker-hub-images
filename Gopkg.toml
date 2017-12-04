@@ -1,7 +1,7 @@
 [metadata]
 project = "arrakis-acceptance-testing"
-updated = "2017-11-20"
+updated = "2017-12-04"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  version = "=0.11.0"
+  version = "=0.11.1"
