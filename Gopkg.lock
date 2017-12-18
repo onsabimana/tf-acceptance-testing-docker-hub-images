@@ -143,8 +143,8 @@
 [[projects]]
   name = "github.com/hashicorp/terraform"
   packages = ["config","config/configschema","config/hcl2shim","config/module","dag","flatmap","helper/acctest","helper/config","helper/encryption","helper/hashcode","helper/hilmapstructure","helper/logging","helper/mutexkv","helper/pathorcontents","helper/resource","helper/schema","helper/structure","helper/validation","moduledeps","plugin","plugin/discovery","registry/regsrc","registry/response","svchost","svchost/auth","svchost/disco","terraform","tfdiags","version"]
-  revision = "ec9d4f1d0f90e8ec5148f94b6d634eb542a4f0ce"
-  version = "v0.11.0"
+  revision = "a42fdb08a43c7fabb8898fe8c286b793bbaa4835"
+  version = "v0.11.1"
 
 [[projects]]
   name = "github.com/hashicorp/vault"
@@ -298,6 +298,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "766ef3aa428b88a277f6e8df763c803cb27a94dd20a602922d483116a4e12103"
+  inputs-digest = "565b3764bbe4b2b824fe149a5c81f83afbca426aa5071832c40c32182bb66737"
   solver-name = "gps-cdcl"
   solver-version = 1
