@@ -7,7 +7,7 @@ ENV GOLANG_DEP_VERSION master
 RUN \
      go get -u github.com/golang/dep/cmd/dep \
   && cd $GOPATH/src/github.com/golang/dep \
-  && git checkout $GOLANG_DEP_VERSION
+  && git checkout $GOLANG_DEP_VERSION \
 # create our app folder
   && mkdir -p $GOPATH/src/app
 
