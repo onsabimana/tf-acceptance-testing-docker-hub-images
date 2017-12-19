@@ -4,6 +4,9 @@ updated = "2017-12-04"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  # version = "=0.11.1"
-  branch = "module-test-helpers"
-  source = "github.com/cozero/terraform"
+  # locked to master until the 0.11.2 release
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/terraform-providers/terraform-provider-aws"
+  version = "1.6.0"

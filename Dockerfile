@@ -8,17 +8,12 @@ RUN \
      go get -u github.com/golang/dep/cmd/dep \
   && cd $GOPATH/src/github.com/golang/dep \
   && git checkout $GOLANG_DEP_VERSION
+# create our app folder
+  && mkdir -p $GOPATH/src/app
 
-# We're going to impregnate our tests in the terraform-provider-aws package
-RUN \
-     go get -u github.com/terraform-providers/terraform-provider-aws/aws
+WORKDIR $GOPATH/src/app
 
-WORKDIR $GOPATH/src/github.com/terraform-providers/terraform-provider-aws
-
-ENV TF_PROVIDER_AWS_VERSION v1.5.0
-RUN git checkout $TF_PROVIDER_AWS_VERSION
-
-COPY Gopkg.toml Gopkg.lock ./
+COPY hello Gopkg.toml Gopkg.lock ./
 
 RUN dep ensure -v
 
