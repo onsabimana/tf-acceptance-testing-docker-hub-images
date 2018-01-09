@@ -10,3 +10,7 @@ updated = "2017-12-04"
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   version = "1.6.0"
+
+  [[constraint]]
+    name = "github.com/terraform-providers/terraform-provider-template"
+    version = "1.0.0"
