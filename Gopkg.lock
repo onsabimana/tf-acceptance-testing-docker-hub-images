@@ -120,8 +120,8 @@
     "service/waf",
     "service/wafregional"
   ]
-  revision = "5177d71d80f123f6d82aaf762387e39b88c5ba23"
-  version = "v1.12.57"
+  revision = "3c754f1d340244540350f0a00b940781bae9c905"
+  version = "v1.12.59"
 
 [[projects]]
   name = "github.com/beevik/etree"
@@ -184,7 +184,7 @@
     ".",
     "helper/url"
   ]
-  revision = "994f50a6f071b07cfbea9eca9618c9674091ca51"
+  revision = "961f56d2e93379b7d9c578e998d09257509a6f97"
 
 [[projects]]
   branch = "master"
@@ -251,9 +251,37 @@
   revision = "0dc08b1671f34c4250ce212759ebd880f743d883"
 
 [[projects]]
-  branch = "master"
   name = "github.com/hashicorp/terraform"
-  packages = ["config","config/configschema","config/hcl2shim","config/module","dag","flatmap","helper/acctest","helper/config","helper/encryption","helper/hashcode","helper/hilmapstructure","helper/logging","helper/mutexkv","helper/pathorcontents","helper/resource","helper/schema","helper/structure","helper/validation","moduledeps","plugin","plugin/discovery","registry","registry/regsrc","registry/response","svchost","svchost/auth","svchost/disco","terraform","tfdiags","version"]
+  packages = [
+    "config",
+    "config/configschema",
+    "config/hcl2shim",
+    "config/module",
+    "dag",
+    "flatmap",
+    "helper/config",
+    "helper/encryption",
+    "helper/hashcode",
+    "helper/hilmapstructure",
+    "helper/logging",
+    "helper/mutexkv",
+    "helper/pathorcontents",
+    "helper/resource",
+    "helper/schema",
+    "helper/structure",
+    "helper/validation",
+    "moduledeps",
+    "plugin/discovery",
+    "registry",
+    "registry/regsrc",
+    "registry/response",
+    "svchost",
+    "svchost/auth",
+    "svchost/disco",
+    "terraform",
+    "tfdiags",
+    "version"
+  ]
   revision = "a6008b8a48a749c7c167453b9cf55ffd572b9a5d"
   version = "v0.11.2"
 
@@ -436,7 +464,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "d38bf781f16e180a1b2ad82697d2f81d7b7ecfac"
+  revision = "b9cf5f96b68d9eaa53d5db5fef235718767f416a"
 
 [[projects]]
   branch = "master"
@@ -463,11 +491,11 @@
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "1244d3ce02e3e1c16820ada0bae506b6c479f106"
+  revision = "d670f9405373e636a5a2765eea47fac0c9bc91a4"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1bebc748d34584c68f0f4c36b05c92cddae2ba1e6b59fc35b29ee19a622428de"
+  inputs-digest = "c501ce30741101cdc5da834526b10b4bd9bd81fb98b95989521a6baa3caae56c"
   solver-name = "gps-cdcl"
   solver-version = 1
