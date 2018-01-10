@@ -4,4 +4,12 @@ updated = "2017-12-04"
 
 [[constraint]]
   name = "github.com/hashicorp/terraform"
-  version = "=0.11.2"
+  version = "0.11.2"
+
+[[constraint]]
+  name = "github.com/terraform-providers/terraform-provider-aws"
+  version = "1.6.0"
+
+[[constraint]]
+  name = "github.com/terraform-providers/terraform-provider-template"
+  version = "1.0.0"
