@@ -15,5 +15,5 @@ Welcome! You are using the following packages:-
 hashicorp/terraform %s
 terraform-providers/terraform-provider-aws
 terraform-providers/terraform-provider-template
-`, version.VersionString())
+`, version.String())
 }
