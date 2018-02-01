@@ -1,25 +1,19 @@
-FROM golang:1.9.1
+FROM golang:1.9.3
 LABEL authors="Mat Baker <mbaker@cozero.com.au,Stuart Auld <sauld@cozero.com.au>"
 
+# Use dep to override dependencies based on our Gopkg.toml
+ENV GOLANG_DEP_VERSION v0.4.1
+ADD https://github.com/golang/dep/releases/download/$GOLANG_DEP_VERSION/dep-linux-amd64 /usr/bin/dep
 
-# Use dep for dependency management
-ENV GOLANG_DEP_VERSION v0.3.1
 RUN \
-     go get -u github.com/golang/dep/cmd/dep \
-  && cd $GOPATH/src/github.com/golang/dep \
-  && git checkout $GOLANG_DEP_VERSION
+     chmod +x /usr/bin/dep \
+  && mkdir -p $GOPATH/src/app
 
-# We're going to impregnate our tests in the terraform-provider-aws package
+WORKDIR $GOPATH/src/app
+
+COPY hello Gopkg.toml Gopkg.lock ./
+
 RUN \
-     go get -u github.com/terraform-providers/terraform-provider-aws/aws
-
-WORKDIR $GOPATH/src/github.com/terraform-providers/terraform-provider-aws
-
-ENV TF_PROVIDER_AWS_VERSION master
-RUN git checkout $TF_PROVIDER_AWS_VERSION
-
-COPY Gopkg.toml Gopkg.lock ./
-
-RUN dep ensure -v
+  dep ensure -v --update
 
 ENTRYPOINT ["go"]
