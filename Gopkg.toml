@@ -1,15 +1,19 @@
 [metadata]
 project = "arrakis-acceptance-testing"
-updated = "2017-12-04"
+updated = "2018-02-02"
 
-[[constraint]]
+[[override]]
   name = "github.com/hashicorp/terraform"
-  version = "0.11.2"
+  version = "0.11.3"
 
-[[constraint]]
+[[override]]
   name = "github.com/terraform-providers/terraform-provider-aws"
-  version = "1.7.0"
+  version = "1.8.0"
 
-[[constraint]]
+[[override]]
   name = "github.com/terraform-providers/terraform-provider-template"
   version = "1.0.0"
+
+[[override]]
+  name = "github.com/terraform-providers/terraform-provider-pagerduty"
+  version = "0.1.3"

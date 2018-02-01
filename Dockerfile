@@ -1,20 +1,19 @@
-FROM golang:1.9.2
+FROM golang:1.9.3
 LABEL authors="Mat Baker <mbaker@cozero.com.au,Stuart Auld <sauld@cozero.com.au>"
 
 # Use dep to override dependencies based on our Gopkg.toml
-# Warning: using master until v0.3.3 is released!
-ENV GOLANG_DEP_VERSION master
+ENV GOLANG_DEP_VERSION v0.4.1
+ADD https://github.com/golang/dep/releases/download/$GOLANG_DEP_VERSION/dep-linux-amd64 /usr/bin/dep
+
 RUN \
-     go get -u github.com/golang/dep/cmd/dep \
-  && cd $GOPATH/src/github.com/golang/dep \
-  && git checkout $GOLANG_DEP_VERSION \
-# create our app folder
+     chmod +x /usr/bin/dep \
   && mkdir -p $GOPATH/src/app
 
 WORKDIR $GOPATH/src/app
 
-COPY hello Gopkg.toml Gopkg.lock ./
+COPY Gopkg.lock ./
 
-RUN dep ensure -v
+RUN \
+  dep ensure -v --vendor-only
 
 ENTRYPOINT ["go"]

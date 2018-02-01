@@ -45,16 +45,15 @@ docker run --rm \
 ```
 ## Updating dependency versions
 
+Prerequisites: 
+* Go
+* Dep
+
 Add any new constraints to the Gopkg.toml file to your liking (RTFM)[https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md]
 
-Build the bootstrap container
+Update the lock file
 ```
-docker build -f Dockerfile-bootstrap -t acctest .
-```
-
-Get the new Gopkg .lock file
-```
-(docker run --rm acctest) > Gopkg.lock
+dep ensure -v
 ```
 
 Finally, commit the changes to Gopkg.lock and Gopkg.toml and PR!
