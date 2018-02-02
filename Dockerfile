@@ -11,7 +11,7 @@ RUN \
 
 WORKDIR $GOPATH/src/app
 
-COPY Gopkg.lock ./
+COPY Gopkg.toml Gopkg.lock ./
 
 RUN \
   dep ensure -v --vendor-only
