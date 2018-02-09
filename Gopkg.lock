@@ -291,8 +291,8 @@
     "tfdiags",
     "version"
   ]
-  revision = "3802b14260603f90c7a1faf55994dcc8933e2069"
-  version = "v0.11.3"
+  revision = "2a503b6"
+  source = "https://github.com/cozero/terraform"
 
 [[projects]]
   name = "github.com/hashicorp/vault"
@@ -517,6 +517,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "704c5ae069f3fe2de1d8c5c65c180b5ea7b273deb5de14db85941a59b2410b7e"
+  inputs-digest = "2f0ea92ee3c56640728025a33757bd93b5a19eb853f5f7c4e8cf30a613aaa34d"
   solver-name = "gps-cdcl"
   solver-version = 1

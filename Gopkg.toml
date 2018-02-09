@@ -4,7 +4,8 @@ updated = "2018-02-02"
 
 [[override]]
   name = "github.com/hashicorp/terraform"
-  version = "0.11.3"
+  revision = "2a503b6"
+  source = "https://github.com/cozero/terraform"
 
 [[override]]
   name = "github.com/terraform-providers/terraform-provider-aws"
