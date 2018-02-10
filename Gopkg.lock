@@ -63,6 +63,7 @@
     "service/athena",
     "service/autoscaling",
     "service/batch",
+    "service/cloud9",
     "service/cloudformation",
     "service/cloudfront",
     "service/cloudtrail",
@@ -415,8 +416,8 @@
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
-  revision = "8937a3a4e9d77c8089cf147861b604e3a2d8cf7e"
-  version = "v1.8.0"
+  revision = "5293a0e3b1366ee16d8742b9b2354781a79bfbd9"
+  version = "v1.9.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-pagerduty"
@@ -517,6 +518,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2f0ea92ee3c56640728025a33757bd93b5a19eb853f5f7c4e8cf30a613aaa34d"
+  inputs-digest = "520c154d00dbc6062a2ccc6a0ce005ce8f138409ec4cdf2bf86fa537222f0c25"
   solver-name = "gps-cdcl"
   solver-version = 1
