@@ -292,8 +292,7 @@
     "tfdiags",
     "version"
   ]
-  revision = "2a503b6"
-  source = "https://github.com/cozero/terraform"
+  revision = "1d0f5fdac99ec9f1a8269aded78ce1da6f547fab"
 
 [[projects]]
   name = "github.com/hashicorp/vault"
@@ -408,12 +407,6 @@
   version = "v1.1"
 
 [[projects]]
-  name = "github.com/satori/go.uuid"
-  packages = ["."]
-  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
-  version = "v1.2.0"
-
-[[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
   revision = "5293a0e3b1366ee16d8742b9b2354781a79bfbd9"
@@ -518,6 +511,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "520c154d00dbc6062a2ccc6a0ce005ce8f138409ec4cdf2bf86fa537222f0c25"
+  inputs-digest = "c68f0c5566aabeabd133badd3fe04e39835cc3d40be082ec9a7db292d7f4e7c7"
   solver-name = "gps-cdcl"
   solver-version = 1
