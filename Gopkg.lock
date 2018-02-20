@@ -407,6 +407,12 @@
   version = "v1.1"
 
 [[projects]]
+  name = "github.com/terraform-providers/terraform-provider-archive"
+  packages = ["archive"]
+  revision = "f8d3d98d3f12e24d6d1712696730b1c0003db23c"
+  version = "v1.0.0"
+
+[[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
   revision = "5293a0e3b1366ee16d8742b9b2354781a79bfbd9"
@@ -511,6 +517,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c68f0c5566aabeabd133badd3fe04e39835cc3d40be082ec9a7db292d7f4e7c7"
+  inputs-digest = "5de31bb517bda9acd5416c0f1f0f1e1747db6b14a52e0468d53e02970ad051d3"
   solver-name = "gps-cdcl"
   solver-version = 1
