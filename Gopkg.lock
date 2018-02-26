@@ -60,6 +60,7 @@
     "service/acm",
     "service/apigateway",
     "service/applicationautoscaling",
+    "service/appsync",
     "service/athena",
     "service/autoscaling",
     "service/batch",
@@ -78,6 +79,7 @@
     "service/cognitoidentityprovider",
     "service/configservice",
     "service/databasemigrationservice",
+    "service/dax",
     "service/devicefarm",
     "service/directconnect",
     "service/directoryservice",
@@ -415,8 +417,8 @@
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
-  revision = "5293a0e3b1366ee16d8742b9b2354781a79bfbd9"
-  version = "v1.9.0"
+  revision = "684291f45b87da88f39a8b4050ebc1c5e6c2f6e0"
+  version = "v1.10.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-pagerduty"
@@ -517,6 +519,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5de31bb517bda9acd5416c0f1f0f1e1747db6b14a52e0468d53e02970ad051d3"
+  inputs-digest = "953f577903145081b37db79a746a843b2713ea83c634928ec8dc2817f79f6e9f"
   solver-name = "gps-cdcl"
   solver-version = 1
