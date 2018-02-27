@@ -45,6 +45,7 @@
     "aws/request",
     "aws/session",
     "aws/signer/v4",
+    "internal/sdkrand",
     "internal/shareddefaults",
     "private/protocol",
     "private/protocol/ec2query",
@@ -126,8 +127,8 @@
     "service/waf",
     "service/wafregional"
   ]
-  revision = "b0e76431638de15ec1e6be51b6f745e1f2134fde"
-  version = "v1.12.63"
+  revision = "f3a52638aeadcd5d6ba1d747b8c552c8e0066312"
+  version = "v1.13.5"
 
 [[projects]]
   name = "github.com/beevik/etree"
@@ -196,7 +197,7 @@
     ".",
     "helper/url"
   ]
-  revision = "961f56d2e93379b7d9c578e998d09257509a6f97"
+  revision = "64040d90d4ab861e7e833d689dc76a0f176d8dec"
 
 [[projects]]
   branch = "master"
@@ -243,7 +244,7 @@
     "hcldec",
     "hclparse"
   ]
-  revision = "883a81b4902ecdc60cd9d77eae4c228792827c13"
+  revision = "4719b76b5235739a3aa76131739a62aec6192e7d"
 
 [[projects]]
   branch = "master"
@@ -303,14 +304,14 @@
     "helper/jsonutil",
     "helper/pgpkeys"
   ]
-  revision = "87b6919dea55da61d7cd444b2442cabb8ede8ab1"
-  version = "v0.9.1"
+  revision = "36edb4d42380d89a897e7f633046423240b710d9"
+  version = "v0.9.5"
 
 [[projects]]
   branch = "master"
   name = "github.com/heimweh/go-pagerduty"
   packages = ["pagerduty"]
-  revision = "5536d50d2555892a2cdc778f9717d30d926c4566"
+  revision = "971abe8944f0b7af606b081ab6ac3f59b4058ebd"
 
 [[projects]]
   branch = "master"
@@ -341,7 +342,7 @@
     "openpgp/s2k",
     "rsa"
   ]
-  revision = "2d22b6e67049389f2b93ab4bcb4e2694f844db62"
+  revision = "8bab6ce2ea76875dcf28c287110f9cdf17fee30c"
 
 [[projects]]
   name = "github.com/mattn/go-isatty"
@@ -389,7 +390,7 @@
   branch = "master"
   name = "github.com/mitchellh/mapstructure"
   packages = ["."]
-  revision = "b4575eea38cca1123ec2dc90c26529b5c5acfcff"
+  revision = "00c29f56e2386353d58c599509e8dc3801b0d716"
 
 [[projects]]
   branch = "master"
@@ -455,7 +456,7 @@
     "cty/json",
     "cty/set"
   ]
-  revision = "709e4033eeb037dc543dbc2048065dfb814ce316"
+  revision = "26c3df5df72fc4bb0f323e36b752d7869ccc5d3a"
 
 [[projects]]
   branch = "master"
@@ -471,7 +472,7 @@
     "openpgp/packet",
     "openpgp/s2k"
   ]
-  revision = "13931e22f9e72ea58bb73048bc752b48c6d4d4ac"
+  revision = "beaf6a35706e5032ae4c3fcf342c663c069f44d2"
 
 [[projects]]
   branch = "master"
@@ -481,16 +482,15 @@
     "html/atom",
     "idna"
   ]
-  revision = "5ccada7d0a7ba9aeb5d3aca8d3501b4c2a509fec"
+  revision = "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "2c42eef0765b9837fbdab12011af7830f55f88f0"
+  revision = "f6cff0780e542efa0c8e864dc8fa522808f6a598"
 
 [[projects]]
-  branch = "master"
   name = "golang.org/x/text"
   packages = [
     "collate",
@@ -508,17 +508,18 @@
     "unicode/norm",
     "unicode/rangetable"
   ]
-  revision = "e19ae1496984b1c655b8044a65c0300a3c878dd3"
+  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
+  version = "v0.3.0"
 
 [[projects]]
-  branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "d670f9405373e636a5a2765eea47fac0c9bc91a4"
+  revision = "7f97868eec74b32b0982dd158a51a446d1da7eb5"
+  version = "v2.1.1"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "953f577903145081b37db79a746a843b2713ea83c634928ec8dc2817f79f6e9f"
+  inputs-digest = "57f67a52f9327127849a6ea18b5bdf84c1c9fb8db67287869b789bd707bbac68"
   solver-name = "gps-cdcl"
   solver-version = 1
