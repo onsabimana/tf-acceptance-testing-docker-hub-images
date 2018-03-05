@@ -7,6 +7,7 @@ import (
 	_ "github.com/terraform-providers/terraform-provider-archive/archive"
 	_ "github.com/terraform-providers/terraform-provider-aws/aws"
 	_ "github.com/terraform-providers/terraform-provider-pagerduty/pagerduty"
+	_ "github.com/terraform-providers/terraform-provider-random/random"
 	_ "github.com/terraform-providers/terraform-provider-template/template"
 )
 
@@ -18,6 +19,7 @@ hashicorp/terraform %s
 terraform-providers/terraform-provider-archive
 terraform-providers/terraform-provider-aws
 terraform-providers/terraform-provider-pagerduty
+terraform-providers/terraform-provider-random
 terraform-providers/terraform-provider-template
 `, version.String())
 }
