@@ -14,6 +14,6 @@ WORKDIR $GOPATH/src/app
 COPY Gopkg.toml Gopkg.lock ./
 
 RUN \
-  dep ensure -v --update
+  dep ensure -v --vendor-only
 
 ENTRYPOINT ["go"]
