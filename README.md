@@ -14,9 +14,9 @@ So, since we're basically dropping our tests in the middle of someone else's rep
 ## What's included?
 
 * Debian jessie
-* Go 1.9.2
-* Go dep 0.3.2 (Google's sub-official dependancy management tool)
-* terraform-provider-aws v1.3.0
+* Go 1.9.3
+* Go dep 0.4.1 (Google's sub-official dependancy management tool)
+* terraform-provider-aws v1.10.0
 * Go dependencies based on the Gopkg.lock file and the terraform-provier-aws/vendor folder
 
 ## Usage
@@ -32,7 +32,7 @@ docker run --rm \
   -v ~/.aws:/root/.aws \
   -v $(pwd):/config \
   $(for i in $(ls aws); do echo "--mount type=bind,source=$(pwd)/aws/${i},target=/go/src/github.com/terraform-providers/terraform-provider-aws/aws/${i}"; done) \
-  cozero/tf-acceptance-testing:v0.10.8 test -v -run Arrakis ./aws/
+  cozero/tf-acceptance-testing:v0.11.3-cz5 test -v -run Arrakis ./aws/
 ```
 
 * or use aws-vault, run in server mode and remove the AWS stuff
@@ -45,7 +45,7 @@ docker run --rm \
 ```
 ## Updating dependency versions
 
-Prerequisites: 
+Prerequisites:
 * Go
 * Dep
 

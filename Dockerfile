@@ -11,7 +11,7 @@ RUN \
 
 WORKDIR $GOPATH/src/app
 
-COPY hello Gopkg.toml Gopkg.lock ./
+COPY Gopkg.toml Gopkg.lock ./
 
 RUN \
   dep ensure -v --update
