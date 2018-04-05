@@ -1,4 +1,4 @@
-FROM golang:1.9.3
+FROM golang:1.10.1
 LABEL authors="Mat Baker <mbaker@cozero.com.au,Stuart Auld <sauld@cozero.com.au>"
 
 # Use dep to override dependencies based on our Gopkg.toml

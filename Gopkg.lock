@@ -107,10 +107,12 @@
     "service/kinesis",
     "service/kms",
     "service/lambda",
+    "service/lexmodelbuildingservice",
     "service/lightsail",
     "service/mediastore",
     "service/mq",
     "service/opsworks",
+    "service/organizations",
     "service/rds",
     "service/redshift",
     "service/route53",
@@ -279,6 +281,7 @@
     "dag",
     "flatmap",
     "helper/config",
+    "helper/customdiff",
     "helper/encryption",
     "helper/hashcode",
     "helper/hilmapstructure",
@@ -289,6 +292,7 @@
     "helper/schema",
     "helper/structure",
     "helper/validation",
+    "httpclient",
     "moduledeps",
     "plugin/discovery",
     "registry",
@@ -301,7 +305,8 @@
     "tfdiags",
     "version"
   ]
-  revision = "1d0f5fdac99ec9f1a8269aded78ce1da6f547fab"
+  revision = "dbce85d85ff0beebc660b3d1805b4ef15361af00"
+  version = "v0.11.6"
 
 [[projects]]
   name = "github.com/hashicorp/vault"
@@ -418,26 +423,26 @@
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-archive"
   packages = ["archive"]
-  revision = "f8d3d98d3f12e24d6d1712696730b1c0003db23c"
-  version = "v1.0.0"
+  revision = "b6f350b90d0ac53414875ec10c8cdcf78a9923a1"
+  version = "v1.0.3"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   packages = ["aws"]
-  revision = "684291f45b87da88f39a8b4050ebc1c5e6c2f6e0"
-  version = "v1.10.0"
+  revision = "af548b22d71dea0087270aeaab736ffffeaa2ddd"
+  version = "v1.13.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-pagerduty"
   packages = ["pagerduty"]
-  revision = "790feb660ec9e6ef83a423502bef04fc084b1ba9"
-  version = "v0.1.3"
+  revision = "9b389138ead411284fa994c24e38a9b31e2a6cb2"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-random"
   packages = ["random"]
-  revision = "63288900fcffec9d16fce42a353e1c2bb944792c"
-  version = "v1.1.0"
+  revision = "b536ad86507447138cccc9f9edb595634600ded1"
+  version = "v1.2.0"
 
 [[projects]]
   name = "github.com/terraform-providers/terraform-provider-template"
@@ -532,6 +537,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a1fe638ff6be611355004825e48b91aa345f66eb49190a07b87cc90d689d3505"
+  inputs-digest = "b2bd4687c4d7245b7262ed731674252fcec59c83abd9c4c17dfffd3f3e590857"
   solver-name = "gps-cdcl"
   solver-version = 1

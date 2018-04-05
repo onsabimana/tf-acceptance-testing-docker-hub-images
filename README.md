@@ -13,11 +13,13 @@ So, since we're basically dropping our tests in the middle of someone else's rep
 
 ## What's included?
 
-* Debian jessie
-* Go 1.9.3
-* Go dep 0.4.1 (Google's sub-official dependancy management tool)
-* terraform-provider-aws v1.10.0
-* Go dependencies based on the Gopkg.lock file and the terraform-provier-aws/vendor folder
+* Debian stretch
+* Go 1.10.1
+* terraform-provider-archive
+* terraform-provider-aws
+* terraform-provider-pagerduty
+* terraform-provider-random
+* terraform-provider-template
 
 ## Usage
 
