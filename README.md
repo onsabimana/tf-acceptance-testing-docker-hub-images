@@ -34,7 +34,7 @@ docker run --rm \
   -v ~/.aws:/root/.aws \
   -v $(pwd):/config \
   $(for i in $(ls aws); do echo "--mount type=bind,source=$(pwd)/aws/${i},target=/go/src/github.com/terraform-providers/terraform-provider-aws/aws/${i}"; done) \
-  cozero/tf-acceptance-testing:v0.11.3-cz5 test -v -run Arrakis ./aws/
+  cozero/tf-acceptance-testing:v0.11.6 test -v -run Arrakis ./aws/
 ```
 
 * or use aws-vault, run in server mode and remove the AWS stuff
