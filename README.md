@@ -7,7 +7,9 @@ Automatic build of terraform acceptance test container for [Docker Hub](https://
 
 - Full list of tags at https://hub.docker.com/r/cozero/tf-acceptance-testing/tags/
 
-### Hashicorp Release Versions
+### Hashicorp Terraform
+
+Built from the official [hashicorp/terraform](https://github.com/hashicorp/terraform) repository.
 
 - cozero/tf-acceptance-testing:v0.11.7
 - cozero/tf-acceptance-testing:v0.11.6
@@ -17,7 +19,9 @@ Automatic build of terraform acceptance test container for [Docker Hub](https://
 - cozero/tf-acceptance-testing:v0.10.8
 - cozero/tf-acceptance-testing:v0.10.7
 
-### COzero Release Versions
+### COzero Terraform
+
+COzero is a contributor to terraform and sometimes has needs for referencing the [cozero/terraform](https://github.com/cozero/terraform) repository instead of the official [hashicorp/terraform](https://github.com/hashicorp/terraform) one.
 
 - cozero/tf-acceptance-testing:v0.11.3-cz7
 - cozero/tf-acceptance-testing:v0.11.3-cz6
@@ -26,6 +30,11 @@ Automatic build of terraform acceptance test container for [Docker Hub](https://
 - cozero/tf-acceptance-testing:v0.11.3-cz3
 - cozero/tf-acceptance-testing:v0.11.3-cz2
 - cozero/tf-acceptance-testing:v0.11.3-cz
+
+### Other Terraform ?
+
+_We should probably note why we have these amongst others in our docker tag listing or :knife: them._
+
 - cozero/tf-acceptance-testing:v0.11.2-s2
 - cozero/tf-acceptance-testing:v0.11.2-s
 
