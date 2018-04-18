@@ -1,5 +1,33 @@
 # Terraform Acceptance Test Docker Image
-Automatic build of terraform acceptance test container for (Docker Hub)[https://hub.docker.com/r/cozero/tf-acceptance-testing/]
+Automatic build of terraform acceptance test container for [Docker Hub](https://hub.docker.com/r/cozero/tf-acceptance-testing/).
+
+## Current Containers
+
+[![tf-acceptance-testing:v0.11.7 build status](https://img.shields.io/docker/build/cozero/tf-acceptance-testing.svg)](https://hub.docker.com/r/cozero/tf-acceptance-testing)
+
+- Full list of tags at https://hub.docker.com/r/cozero/tf-acceptance-testing/tags/
+
+### Hashicorp Release Versions
+
+- cozero/tf-acceptance-testing:v0.11.7
+- cozero/tf-acceptance-testing:v0.11.6
+- cozero/tf-acceptance-testing:v0.11.3
+- cozero/tf-acceptance-testing:v0.11.1
+- cozero/tf-acceptance-testing:v0.11.0
+- cozero/tf-acceptance-testing:v0.10.8
+- cozero/tf-acceptance-testing:v0.10.7
+
+### COzero Release Versions
+
+- cozero/tf-acceptance-testing:v0.11.3-cz7
+- cozero/tf-acceptance-testing:v0.11.3-cz6
+- cozero/tf-acceptance-testing:v0.11.3-cz5
+- cozero/tf-acceptance-testing:v0.11.3-cz4
+- cozero/tf-acceptance-testing:v0.11.3-cz3
+- cozero/tf-acceptance-testing:v0.11.3-cz2
+- cozero/tf-acceptance-testing:v0.11.3-cz
+- cozero/tf-acceptance-testing:v0.11.2-s2
+- cozero/tf-acceptance-testing:v0.11.2-s
 
 ## RTFM
 
