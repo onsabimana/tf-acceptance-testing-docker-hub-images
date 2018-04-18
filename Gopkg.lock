@@ -305,8 +305,8 @@
     "tfdiags",
     "version"
   ]
-  revision = "dbce85d85ff0beebc660b3d1805b4ef15361af00"
-  version = "v0.11.6"
+  revision = "41e50bd32a8825a84535e353c3674af8ce799161"
+  version = "v0.11.7"
 
 [[projects]]
   name = "github.com/hashicorp/vault"
@@ -537,6 +537,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b2bd4687c4d7245b7262ed731674252fcec59c83abd9c4c17dfffd3f3e590857"
+  inputs-digest = "388e53e4a6dbcaf3aa0ca151d51c26f116fea42db001b44fa3db218d4800a884"
   solver-name = "gps-cdcl"
   solver-version = 1
