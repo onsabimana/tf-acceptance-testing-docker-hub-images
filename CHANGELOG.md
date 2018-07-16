@@ -1,5 +1,9 @@
 # CHANGELOG.md
 
+## v0.11.7-p2 (UNRELEASED)
+
+- Upgrade to [golang](https://golang.org/doc/devel/release.html#go1.10.minor)#v1.10.3
+
 ## v0.11.7-p1 (2018-07-16)
 
 - Provider updates and additions:
