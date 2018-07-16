@@ -9,6 +9,8 @@
   - [terraform-provider-github](https://github.com/terraform-providers/terraform-provider-github)#v1.1.0
   - [terraform-provider-pagerduty](https://github.com/terraform-providers/terraform-provider-pagerduty)#v1.1.1
   - [terraform-provider-random](https://github.com/terraform-providers/terraform-provider-random)#v1.3.1
+- Enforce the use of aws-sdk-go#v1.14.24 due to breaking changes with
+  terraform-provider-aws#v1.27.0
 
 ## v0.11.7 (2018-04-18)
 

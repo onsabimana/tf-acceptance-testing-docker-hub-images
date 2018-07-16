@@ -2,6 +2,13 @@
 project = "arrakis-acceptance-testing"
 updated = "2018-07-16"
 
+# aws-sdk-go has changes in v1.14.25 onwards that altered.
+# Further, the vendor.json in the terraform-provider-aws is not valid.
+# https://github.com/terraform-providers/terraform-provider-aws/blob/v1.27.0/vendor/vendor.json
+[[override]]
+  name = "github.com/aws/aws-sdk-go"
+  version = "=1.14.24"
+
 [[override]]
   name = "github.com/hashicorp/terraform"
   version = "^0.11.7"

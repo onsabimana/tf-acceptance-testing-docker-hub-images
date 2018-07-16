@@ -54,7 +54,6 @@
     "aws/signer/v4",
     "internal/sdkio",
     "internal/sdkrand",
-    "internal/sdkuri",
     "internal/shareddefaults",
     "private/protocol",
     "private/protocol/ec2query",
@@ -148,8 +147,8 @@
     "service/waf",
     "service/wafregional"
   ]
-  revision = "94b80148ea4b1b136682116294b151766a3b85c2"
-  version = "v1.14.27"
+  revision = "eeb327a02aac261d701e102e14993eae4d5ab844"
+  version = "v1.14.24"
 
 [[projects]]
   name = "github.com/beevik/etree"
@@ -323,7 +322,6 @@
     "pkg/services/guardian",
     "pkg/services/search",
     "pkg/services/session",
-    "pkg/services/sqlstore/migrator",
     "pkg/setting",
     "pkg/tsdb",
     "pkg/util"
@@ -549,12 +547,6 @@
   packages = ["."]
   revision = "0360b2af4f38e8d38c7fce2a9f4e702702d73a39"
   version = "v0.0.3"
-
-[[projects]]
-  name = "github.com/mattn/go-sqlite3"
-  packages = ["."]
-  revision = "25ecb14adfc7543176f7d85291ec7dba82c6f7e4"
-  version = "v1.9.0"
 
 [[projects]]
   name = "github.com/matttproud/golang_protobuf_extensions"
@@ -903,6 +895,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5cc2321172476b88eb34065538b3bdd3fd9065bb594fc0d1dbe5a358aee38fcd"
+  inputs-digest = "2bc7b422f08612703a517a1a0d7268da4145328945071a10f663793c053f014d"
   solver-name = "gps-cdcl"
   solver-version = 1
