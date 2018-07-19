@@ -1,5 +1,9 @@
 # CHANGELOG.md
 
+## v0.11.7-p2 (2018-07-19)
+
+Added a new container based on [Terratest](https://github.com/gruntwork-io/terratest) by Gruntwork(https://www.gruntwork.io/)
+
 ## v0.11.7-p1 (2018-07-16)
 
 - Provider updates and additions:
