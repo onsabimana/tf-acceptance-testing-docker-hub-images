@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source terraform_versions
+
 for i in ${TERRAFORM_VERSIONS[*]}; do
     docker build --build-arg TERRAFORM_VERSION=$i -f $DOCKERFILE_PATH -t $IMAGE_NAME-$i .
 done
