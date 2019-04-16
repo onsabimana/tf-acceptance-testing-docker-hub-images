@@ -1,0 +1,8 @@
+#!/bin/bash
+
+TERRAFORM_VERSIONS=(0.11.7 0.11.3)
+
+for i in ${TERRAFORM_VERSIONS[*]}; do
+    docker tag $DOCKER_REPO:$i $DOCKER_REPO:$SOURCE_COMMIT
+    docker push $DOCKER_REPO:$SOURCE_COMMIT
+done
