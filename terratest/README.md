@@ -27,12 +27,14 @@ Modify the docker command below, noting in particular:
 - AWS_PROFILE should be setup in your ~/.aws/credentials file and should be a
   test/dev account
 
+- A valid TF_VERSION is one of the values defined for [TERRAFORM_VERSIONS](./terraform_versions)
+
 ```
 docker run --rm \
   -e AWS_PROFILE=development \
   -v ~/.aws:/root/.aws \
   -v $(pwd):/go/src/app \
-  cozero/tf-acceptance-testing:terratest test -v -run ./...
+  cozero/tf-acceptance-testing:terratest-${TF_VERSION} test -v -run ./...
 ```
 
 - or use aws-vault, run in server mode and remove the AWS stuff
@@ -40,7 +42,7 @@ docker run --rm \
 ```
 docker run --rm \
   -v $(pwd):/go/src/app \
-  cozero/tf-acceptance-testing:terratest test -v -run ./...
+  cozero/tf-acceptance-testing:terratest-${tTF_VERSION} test -v -run ./...
 ```
 
 ## Updating dependency versions
