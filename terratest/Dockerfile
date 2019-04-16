@@ -1,7 +1,7 @@
 FROM golang:1.10.3
 LABEL authors="Mat Baker <mbaker@cozero.com.au,Stuart Auld <sauld@cozero.com.au>"
 
-ARG TERRAFORM_VERSION=0.11.7
+ARG TERRAFORM_VERSION
 
 # Use dep to override dependencies based on our Gopkg.toml
 ENV GOLANG_DEP_VERSION v0.4.1
