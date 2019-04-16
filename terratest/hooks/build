@@ -3,5 +3,5 @@
 TERRAFORM_VERSIONS=(0.11.7 0.11.3)
 
 for i in ${TERRAFORM_VERSIONS[*]}; do
-    docker build --build-arg TERRAFORM_VERSION=$i-f $DOCKERFILE_PATH -t $DOCKER_REPO:$i .
+    docker build --build-arg TERRAFORM_VERSION=$i -f $DOCKERFILE_PATH -t $DOCKER_REPO:$i .
 done
