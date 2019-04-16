@@ -3,7 +3,6 @@
 source terraform_versions
 
 for i in ${TERRAFORM_VERSIONS[*]}; do
-    # docker tag $IMAGE_NAME-$i $DOCKER_REPO:$DOCKER_TAG-v$i
-    # docker push $DOCKER_REPO:$DOCKER_TAG-v$i
-    echo $i
+    docker tag $IMAGE_NAME-$i $DOCKER_REPO:$DOCKER_TAG-v$i
+    docker push $DOCKER_REPO:$DOCKER_TAG-v$i
 done
