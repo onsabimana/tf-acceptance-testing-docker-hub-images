@@ -42,7 +42,7 @@ docker run --rm \
 ```
 docker run --rm \
   -v $(pwd):/go/src/app \
-  cozero/tf-acceptance-testing:terratest-${tTF_VERSION} test -v -run ./...
+  cozero/tf-acceptance-testing:terratest-${TF_VERSION} test -v -run ./...
 ```
 
 ## Updating dependency versions
