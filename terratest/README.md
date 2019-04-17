@@ -34,7 +34,17 @@ docker run --rm \
   -e AWS_PROFILE=development \
   -v ~/.aws:/root/.aws \
   -v $(pwd):/go/src/app \
-  cozero/tf-acceptance-testing:terratest-${TF_VERSION} test -v -run ./...
+  cozero/tf-acceptance-testing:terratest-v${TF_VERSION} test -v -run ./...
+```
+
+An actual command would look as follow using TF_VERSION=0.11.7 :
+
+```
+docker run --rm \
+  -e AWS_PROFILE=development \
+  -v ~/.aws:/root/.aws \
+  -v $(pwd):/go/src/app \
+  cozero/tf-acceptance-testing:terratest-v0.11.7 test -v -run ./...
 ```
 
 - or use aws-vault, run in server mode and remove the AWS stuff
@@ -42,7 +52,7 @@ docker run --rm \
 ```
 docker run --rm \
   -v $(pwd):/go/src/app \
-  cozero/tf-acceptance-testing:terratest-${TF_VERSION} test -v -run ./...
+  cozero/tf-acceptance-testing:terratest-v${TF_VERSION} test -v -run ./...
 ```
 
 ## Updating dependency versions
